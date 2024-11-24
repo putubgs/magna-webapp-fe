@@ -51,7 +51,7 @@ export default function CvReviewerNavbar() {
             </SelectItem>
           </SelectContent>
         </Select>
-        <Link href="#partnership" className="cursor-pointer">
+        <Link href="#upload" className="cursor-pointer">
           CV Review
         </Link>
         <Button className="">Login</Button>
@@ -64,28 +64,28 @@ export default function CvReviewerNavbar() {
         <span></span>
       </div>
       {burgerStatus && (
-        <div className="flex flex-col bg-black w-48 h-40 rounded-xl absolute right-6 top-20 p-4 z-99 space-y-[12px] block md:hidden">
-          <Link
-            href="#organizations"
-            className="cursor-pointer"
-            onClick={handleBurger}
-          >
-            Organizations
+        <div className="flex flex-col bg-black w-48 h-40 rounded-xl absolute right-6 top-20 p-4 z-99 space-y-[12px] md:hidden">
+          <Select defaultValue="en">
+            <SelectTrigger className="!text-base">
+              <SelectValue placeholder="Theme" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="id">
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <p>🇮🇩</p> <p>Indonesia</p>
+                </div>
+              </SelectItem>
+              <SelectItem value="en">
+                <div className="flex items-center gap-3 whitespace-nowrap">
+                  <p>🇺🇸</p> <p>English</p>
+                </div>
+              </SelectItem>
+            </SelectContent>
+          </Select>
+          <Link href="#upload" className="cursor-pointer">
+            CV Review
           </Link>
-          <Link
-            href="#partnership"
-            className="cursor-pointer"
-            onClick={handleBurger}
-          >
-            Partnership
-          </Link>
-          <Link
-            href="#contact"
-            className="cursor-pointer"
-            onClick={handleBurger}
-          >
-            Contact
-          </Link>
+          <Button className="">Login</Button>
         </div>
       )}
     </nav>
