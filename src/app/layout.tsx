@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import { fontVariables } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Magna Partners",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${fontVariables} antialiased`}>{children}</body>
     </html>
   );
 }
