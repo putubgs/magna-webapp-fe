@@ -10,7 +10,7 @@ interface FileWithPreview extends File {
   preview?: string;
 }
 
-export default function FileUpload() {
+export default function FileUpload( { className } : {className?: string} ) {
   const [file, setFile] = useState<FileWithPreview | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -74,12 +74,13 @@ export default function FileUpload() {
               ? "border-indigo-500 bg-purple-50/10"
               : "border-gray-600"
           } 
+          ${className || "h-[264px]"}
           ${error ? "border-red-500" : ""}`}
       >
         {!file ? (
           <div
             {...getRootProps()}
-            className="flex flex-col h-[264px] justify-center text-lg items-center gap-4 text-center cursor-pointer p-6 "
+            className="flex flex-col h-full justify-center text-lg items-center gap-4 text-center cursor-pointer p-6 "
           >
             <input {...getInputProps()} />
             <PdfIcon className="size-[40px]" />
